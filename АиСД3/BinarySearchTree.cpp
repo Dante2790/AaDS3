@@ -8,8 +8,7 @@ bool BinarySearchTree<T>::insert(const T& newKey) {
 		bst::Node* temp;
 		//if (searchIterative(newKey)) {
 			//throw TreeInvalidKey("this key already exists");
-		//}
-
+		//)
 		switch (isEmpty()) {
 		case true:
 			this->root = current;
@@ -34,6 +33,8 @@ bool BinarySearchTree<T>::insert(const T& newKey) {
 		std::cerr << "error: " << er.what() << '\n';
 		return false;
 	}
+	
+	
 	
 }
 /*

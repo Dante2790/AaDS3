@@ -4,6 +4,7 @@
 #include<iostream>
 #include<stdexcept>
 #include<string>
+
 //	определения, являются ли два дерева похожими. Похожими будем называть деревья поиска, содержащие одинаковые наборы ключей. 
 // индивидуальный побочный квест
 
@@ -58,11 +59,9 @@ private:
     }
 
     void getPlace(Node* &current, Node* &resultNode, Node* &source) {
-        static Node* temp = source;
-        //if (!source) {
-           // resultNode = source;
-            //return;
-        //}
+        static Node* temp;
+        temp = source;
+        
         if (source->last) { 
             resultNode = source;
             temp = source;
@@ -92,7 +91,7 @@ public:
    // ~BinarySearchTree();
 
     // 1.1 Функция поиска по ключу в бинарном дереве поиска
-   // bool searchIterative(const T& key) const;
+   // bool searchIterative(const T&& key) const;
 
     // 2 Вставка нового элемента в дерево: true, если элемент добавлен; 
     // false, если элемент уже был
@@ -102,7 +101,7 @@ public:
 
     // 3.1 Удаление элемента c заданным ключом, не нарушающее порядок элементов
     // true, если элемент удален; false, если элемента не было
-    bool remove(const T& key);
+    bool remove(const T&& key);
 
     // 4.1 Вывод структуры (строкового изображения дерева) в выходной поток out,
 // использовать скобки, чтобы показать структуру дерева
